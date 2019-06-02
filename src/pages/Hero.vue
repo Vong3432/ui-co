@@ -49,11 +49,11 @@ export default {
     position:relative;    
     width:100%;
     min-height:60vh;
+    
     display:flex;
     flex-flow:column;
     align-items: center;
     justify-content: center;
-    
 }
 
 .hero-section h2
@@ -61,14 +61,35 @@ export default {
     color:#fff;
 }
 
+.new-product-section
+{
+    background: #FBFBFB;        
+    padding-bottom: 5em;    
+}
+
+.default-product-section
+{
+    padding-bottom:5em;
+}
+
 .new-product-container
 {    
     display: flex;
     flex-flow: row wrap;
     width:100%;
-    min-height: inherit;    
+    min-height: inherit;        
 }
 
+.default-product-container
+{            
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "c c c c"
+                         "c c c c";
+    width:100%;
+    grid-auto-columns: minmax(auto,300px);
+    min-height: inherit;        
+}
 
 .new-product-container img
 {
@@ -85,7 +106,16 @@ export default {
     padding: 0;
 }
 
-
+@media screen and (max-width: 750px)
+{
+    .default-product-container
+    {
+        grid-template-areas: "c"
+                             "c";
+        grid-auto-columns: 1fr;  
+              
+    }
+}
 </style>
 
 

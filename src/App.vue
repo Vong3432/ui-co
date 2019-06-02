@@ -12,7 +12,7 @@
         </b-input-group>
     </Hero>
 
-    <Hero types="content">
+    <Hero types="content" class="new-product-section">
 
         <h2 class="text-center" style="padding-top:2em;padding-bottom:2em">WHAT'S NEW ON UI.CO?</h2>
 
@@ -43,6 +43,31 @@
 
     </Hero>
 
+    <Hero types="content" class="default-product-section">
+      <h2 class="text-left" style="padding-top:2em;padding-bottom:2em">HOT PRODUCTS</h2>
+   
+          <ProductCard class="default-product-container">
+            
+            <b-card 
+            v-for="item in this.hotProducts" 
+            :key="item.id"   
+            :img-src="require('./images/'+item.image)"
+            img-alt="Card image" 
+            img-top
+            class=""
+            >              
+              <b-card-text>                
+                <p class="card-name">{{item.name}}</p>
+                <small>{{item.categories}}</small>
+                <p class="price">{{item.price}}</p>
+              </b-card-text>
+
+            </b-card>
+
+          </ProductCard>
+     
+    </Hero>
+
   </div>
 
 </template>
@@ -50,6 +75,7 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import Hero from './pages/Hero.vue'
+import ProductCard from './components/ProductCard.vue'
 
 export default {
   name: 'app',
@@ -57,7 +83,52 @@ export default {
       return {
         dismissSecs: 10,
         dismissCountDown: 0,
-        showDismissibleAlert: false
+        showDismissibleAlert: false,
+        hotProducts:[
+                {
+                    id: 0,
+                    image:"sunglasses.jpg",
+                    name: "Sunglasses",
+                    categories: "Fashion",
+                    price: "RM3999.00"
+                },
+                {
+                    id: 1,
+                    image:"drone.jpg",
+                    name: "Drone",
+                    categories: "Fashion",
+                    price: "RM3999.00"
+                },
+                {
+                    id: 2,
+                    image:"airpod.jpg",
+                    name: "Airpod",
+                    categories: "Fashion",
+                    price: "RM3999.00"
+                },
+                {
+                    id: 3,
+                    image:"shampoo.jpg",
+                    name: "Shampoo",
+                    categories: "Daily",
+                    price: "RM99.00"
+                },
+                {
+                    id: 4,
+                    image:"bowl.jpg",
+                    name: "Bowl",
+                    categories: "Daily",
+                    price: "RM99.00"
+                },
+                {
+                    id: 5,
+                    image:"supreme.jpg",
+                    name: "Supreme T-Shirt",
+                    categories: "Fashion",
+                    price: "RM59.00"
+                }
+                
+        ]
       }
     },
     methods: {
@@ -70,7 +141,8 @@ export default {
   },
   components: {
     NavBar,
-    Hero
+    Hero,
+    ProductCard
   }
 }
 </script>
