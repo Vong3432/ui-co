@@ -110,8 +110,8 @@ export default {
 {
     .default-product-container
     {
-        grid-template-areas: "c"
-                             "c";
+        grid-template-areas: "c c"
+                             "c c";
         grid-auto-columns: 1fr;  
               
     }

@@ -52,4 +52,12 @@ export default {
     font-weight: bold;
 }
 
+@media screen and (max-width:750px)
+{
+    .product-card img
+    {
+        max-height:100px;
+    }
+}
+
 </style>
