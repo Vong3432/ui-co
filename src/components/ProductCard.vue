@@ -12,10 +12,20 @@ export default {
 
 
 <style scoped>
-
-
 .product-card .card
 {
+    transition: all 300ms ease-in-out;
+    cursor:pointer;
+}
+
+.product-card .card:hover
+{
+    transform: translateY(-5px) scale(1);    
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.product-card .card
+{    
     padding:0;    
     /* max-width: 300px; */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
